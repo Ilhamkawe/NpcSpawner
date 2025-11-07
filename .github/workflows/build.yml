@@ -20,8 +20,8 @@ jobs:
 
       - name: Restore and Build NpcSpawner
         env:
-          REFERENCE_PATH: "${{ github.workspace }}\RocketRadiationStorm\Modules\Rocket.Unturned;${{ github.workspace }}\RocketRadiationStorm\lib;${{ github.workspace }}\NpcSpawner\RocketModFix.Unturned.Redist.Server.3.25.9.2\lib\net48"
-        run: dotnet build "${{ github.workspace }}\NpcSpawner.csproj" -c Release -p:ReferencePath="$env:REFERENCE_PATH"
+          REFERENCE_PATH: "${{ github.workspace }}/RocketRadiationStorm/Modules/Rocket.Unturned;${{ github.workspace }}/RocketRadiationStorm/lib;${{ github.workspace }}/NpcSpawner/RocketModFix.Unturned.Redist.Server.3.25.9.2/lib/net48"
+        run: dotnet build "${{ github.workspace }}/NpcSpawner.csproj" -c Release -p:ReferencePath="$env:REFERENCE_PATH"
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
