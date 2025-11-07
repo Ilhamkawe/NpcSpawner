@@ -19,7 +19,9 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore and Build NpcSpawner
-        run: dotnet build "${{ github.workspace }}/NpcSpawner.csproj" -c Release
+        run: >-
+          dotnet build "${{ github.workspace }}/NpcSpawner.csproj" -c Release
+          -p:ReferencePath="${{ github.workspace }}/RocketRadiationStorm/Modules/Rocket.Unturned;${{ github.workspace }}/RocketRadiationStorm/lib;${{ github.workspace }}/NpcSpawner/RocketModFix.Unturned.Redist.Server.3.25.9.2/lib/net48"
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
