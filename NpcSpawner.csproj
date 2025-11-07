@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>NpcSpawner</AssemblyName>
+    <RootNamespace>NpcSpawner</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Rocket.API">
+      <HintPath>../RocketRadiationStorm/Modules/Rocket.Unturned/Rocket.API.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rocket.Core">
+      <HintPath>../RocketRadiationStorm/Modules/Rocket.Unturned/Rocket.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rocket.Unturned">
+      <HintPath>../RocketRadiationStorm/Modules/Rocket.Unturned/Rocket.Unturned.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>RocketModFix.Unturned.Redist.Server.3.25.9.2/lib/net48/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>../RocketRadiationStorm/lib/Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>RocketModFix.Unturned.Redist.Server.3.25.9.2/lib/net48/com.rlabrecque.steamworks.net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>../RocketRadiationStorm/lib/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>../RocketRadiationStorm/lib/UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>../RocketRadiationStorm/lib/Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="NpcSpawnerPlugin.cs" />
+    <Compile Include="NpcSpawnerPluginConfiguration.cs" />
+    <Compile Include="NpcPlacement.cs" />
+    <Compile Include="Commands\PlaceNpcCommand.cs" />
+    <Compile Include="Commands\ListNpcCommand.cs" />
+    <Compile Include="Commands\RemoveNpcCommand.cs" />
+  </ItemGroup>
+</Project>
+

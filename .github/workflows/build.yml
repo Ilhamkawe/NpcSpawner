@@ -1,0 +1,29 @@
+name: Build NpcSpawner
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore and Build NpcSpawner
+        run: dotnet build ./NpcSpawner/NpcSpawner.csproj -c Release
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NpcSpawner
+          path: |
+            NpcSpawner/bin/Release/net48/
