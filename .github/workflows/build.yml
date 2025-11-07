@@ -19,7 +19,8 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore and Build NpcSpawner
-        run: dotnet build ./NpcSpawner/NpcSpawner.csproj -c Release
+        working-directory: NpcSpawner
+        run: dotnet build NpcSpawner.csproj -c Release
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
